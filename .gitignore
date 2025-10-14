@@ -1,0 +1,5 @@
+.DS_Store
+venv/ # ignore Python virtual environment
+.DS_Store
+venv/ # ignore Python virtual environment
+__pycache__/
