@@ -1,3 +1,23 @@
+🧩 1. Top-Spending Customers (using a CTE)
+Find the top 3 customers who spent the most money across all orders.
+💡 Hint:
+Use a CTE to calculate total_spent per customer (sum of quantity * unit_price).
+Then, select the top 3 from that CTE using ORDER BY total_spent DESC LIMIT 3
+
+with total_spent as (
+    select orders.customer_id, sum(quantity*unit_price) as spent_money from order_items
+    join orders on orders.order_id = order_items.order_id
+    group by orders.customer_id
+) select * from total_spent order by total_spent desc limit 3;
+
+🧩 2. High-Value Orders (using a subquery)
+List all orders whose total value is above the average order value.
+💡 Hint:
+Inner query → compute the average total_price across all orders.
+Outer query → filter orders whose total is greater than that average.
+
+
+
 
 🧩 SQL Practice — Joins, Group By, and Aggregation
 1.	Customer Orders Summary
@@ -37,12 +57,34 @@ Calculate the average value of each customer’s orders.
 
 6.	Unordered Products
 Find all products that have never been ordered.
+order_items, products 
+select products.product_name
+from products left join order_items on products.product_id = order_items.product_id
+where order_id is null;
+
 7.	Customers Without Orders
 Display customers who haven’t placed any orders yet.
+select  customers.name
+from customers left join orders on customers.customer_id = orders.customer_id
+where order_id is null;
+
 8.	Most Popular Product
 Identify the product that has been ordered the most (by total quantity sold).
+select products.product_name, sum(order_items.quantity) as quant from products
+join order_items on order_items.product_id = products.product_id
+group by product_name 
+order by quant desc limit 1;
+
 9.	Top 5 Customers by Spending
 Find the 5 customers who have spent the most money overall.
+customers, orders, transactions
+select customers.name, sum(transactions.amount) as total_spent
+from orders join customers on customers.customer_id = orders.customer_id
+join transactions on transactions.order_id = orders.order_id
+group by customers.name 
+order by total_spent desc limit 5;
+
+
 10.	Monthly Revenue Trend
 Calculate the total revenue for each month based on order dates.
 11.	Category with Highest Average Price
