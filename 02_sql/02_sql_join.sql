@@ -88,6 +88,8 @@ order by total_spent desc limit 5;
 10.	Monthly Revenue Trend
 Calculate the total revenue for each month based on order dates.
 11.	Category with Highest Average Price
+
+
 For each category, compute the average product price and identify the highest one.
 12.	Customer–Category Combination
 Find which product category each customer buys from the most.
