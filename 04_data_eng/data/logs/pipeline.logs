@@ -1,0 +1,6 @@
+2025-10-24 11:29:30,927:INFO:Pipeline started.
+2025-10-24 11:29:30,948:INFO:Raw data loaded.
+2025-10-24 11:29:30,948:INFO:data loaded: 8 rows, 4 columns
+2025-10-24 11:29:30,948:INFO:price column duplicates removed
+2025-10-24 11:29:32,842:INFO:processed data saved to {processed_data}
+2025-10-24 11:29:32,842:INFO:Pipeline finished successfully.
