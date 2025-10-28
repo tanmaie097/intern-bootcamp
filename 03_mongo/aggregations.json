@@ -1,0 +1,10 @@
+db.orders.aggregate([
+  { $match: { status: "success" } },
+  { $group: { _id: "$category", total_sales: { $sum: "$amount" } } },
+  { $sort: { total_sales: -1 } }
+]);
+
+
+Find all customers who are under 18 or over 60 years old.
+
+*/ 
