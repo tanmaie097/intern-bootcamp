@@ -19,3 +19,11 @@ overfitting good training but poor testing
 underfitting; poor training as the data is too simple so it has high bias and low variance 
 insufficient feature engineering; the 
 
+parameter finetuning  - cross validation 
+same model but tune/change the parameters
+ex: randomforestclassifier(n_estimators = 10)
+    randomforestclassifier(n_estimators = 40)
+    randomforestclassifier(n_estimators = 30)
+so basically this can give us better results, performance 
+
+hyper tuning - choosing optimal parameters 
