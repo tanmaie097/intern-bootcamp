@@ -27,3 +27,7 @@ ex: randomforestclassifier(n_estimators = 10)
 so basically this can give us better results, performance 
 
 hyper tuning - choosing optimal parameters 
+find the best hyperparameter settings for a model  we use GRIDSEARCH
+
+#classifier = gridsearchcv(model, {parameter grid}, CV cross_validations, return_train_Score = Fale/true); the parameter grid works 
+#classifier.fit 
